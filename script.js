@@ -12,7 +12,7 @@ function gamelogic(inputValue) {
   if (!inputValue || inputValue < 0 || inputValue > 20) {
     outputMessage.textContent = `❌ Invalid Input`;
   } else if (inputValue === randomNumber) {
-    outputMessage.textContent = `Jeet gaye bhai jeet gye`;
+    outputMessage.textContent = `🥂Jeet gaye bhai jeet gye`;
     document.querySelector(".number").textContent = randomNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
@@ -20,25 +20,35 @@ function gamelogic(inputValue) {
       highscore = score;
       document.querySelector(".highscore").textContent = score;
     }
-  } else if (inputValue > randomNumber) {
+  } else if (inputValue !== randomNumber) {
     if (score > 1) {
       score--;
-      outputMessage.textContent = `High`;
+      outputMessage.textContent = inputValue > randomNumber ? "High" : "Low";
       updateScore.textContent = score;
     } else {
-      outputMessage.textContent = `khatam.. tata good bye`;
-      updateScore.textContent = --score;
-    }
-  } else if (inputValue < randomNumber) {
-    if (score > 1) {
-      score--;
-      outputMessage.textContent = `Low`;
-      updateScore.textContent = score;
-    } else {
-      outputMessage.textContent = `khatam.. tata good bye`;
+      outputMessage.textContent = `👋khatam.. tata good bye`;
       updateScore.textContent = --score;
     }
   }
+  //  else if (inputValue > randomNumber) {
+  //   if (score > 1) {
+  //     score--;
+  //     outputMessage.textContent = `High`;
+  //     updateScore.textContent = score;
+  //   } else {
+  //     outputMessage.textContent = `khatam.. tata good bye`;
+  //     updateScore.textContent = --score;
+  //   }
+  // } else if (inputValue < randomNumber) {
+  //   if (score > 1) {
+  //     score--;
+  //     outputMessage.textContent = `Low`;
+  //     updateScore.textContent = score;
+  //   } else {
+  //     outputMessage.textContent = `khatam.. tata good bye`;
+  //     updateScore.textContent = --score;
+  //   }
+  // }
 }
 
 function checkbutton() {
